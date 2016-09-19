@@ -14,9 +14,12 @@ uint8_t UART_transmit(uint8_t send_value)
 	
 }
 
-uint8_t UART_recieve(void);
+uint8_t UART_recieve(void)
 {
-	
+	uint8_t recieved_value;
+	while (RI == 0);
+	recieved_value = SBUF;
+	return recieved_value;
 	
 	
 }

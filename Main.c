@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <reg52.h>
 
-sbit LED_pin=p1^5;
+sbit LED_pin=P1^5;
 bit LED_State_G;
 void LED_Flash_Init(void);
 void LED_Flash_Change_State(void);

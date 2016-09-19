@@ -1,8 +1,8 @@
 #ifndef _UART_H
 #define _UART_H
 #include "main.h"
-#define SMOD1(0)
-#define spd(1)
+//#define SMOD1(0)
+//#define spd(1)
 
 #include "main.h"
 
