@@ -1,7 +1,7 @@
 #include "main.h"
 #include "memory_test.h"
 
-static uint8_t code code_mem[]="Code Memory: String for Roger Younger";
+static uint8_t code code_mem[]="Code Memory: String for Harry Nantz";
 static uint8_t xdata xdata_mem[50];
 
 /***********************************************************************
@@ -39,5 +39,6 @@ uint8_t * xdata_memory_init(void)
    xdata_mem[3]='t';
    xdata_mem[4]='a'; 
 
+	 
    return xdata_mem;
 }
