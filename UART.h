@@ -1,25 +1,36 @@
 #ifndef _UART_H
 #define _UART_H
+
 #include "main.h"
-#define SMOD1 0
-#define SPD 1
-#define BAUD_RATE 9600
-#define BRL_Value ((uint8_t) (256-(((1+(5*SPD))*(1+(1*SMOD1))*OSC_FREQ)/(32*OSC_PER_INST*(uint32_t)BAUD_RATE))))
-#define Fperiph (OSC_FREQ*6/OSC_PER_INST)
-#define TH1_Reload ((uint8_t) (256-(((1+(1*SMOD1))*OSC_FREQ)/(32*OSC_PER_INST*(uint32_t)BAUD_RATE))))
 
+//------- Public Constant definitions --------------------------------
+// UART settings
+#define UART_MODE0 (0x00)
+#define UART_MODE1 (0x40)
+#define UART_MODE2 (0x80)
+#define UART_MODE3 (0xC0)
+#define ENABLE_485_MODE (0x20)
+#define RECEIVE_ENABLE (0x10)
 
+#define SMOD1 (0)
+#define SPD (1)
+#define BAUD_RATE (9600UL)
+#define BAUD_RATE_RELOAD ((uint8_t) (256-((1+(5*SPD))*(1+(1*SMOD1))*OSC_FREQ)/(32*OSC_PER_INST*BAUD_RATE)))
+
+#define UART_timeout (0xF1)
+
+// ASCII characters
+#define space (0x20)
+#define CR (0x0D)
+#define LF (0x0A)
+#define BS (0x08)
+#define DEL (0x7F)
 
 
 // ------ Public function prototypes -------------------------------
-
-void UART_Init(void);
-/**********************************
-To get rid of the warnings...
-
-uint8_t UART_transmit(uint8_t send_value);
-uint8_t UART_recieve(void);
-**********************************/
+void uart_init(void);
+uint8_t UART_Transmit(uint8_t send_value);
+uint8_t UART_Receive(void);
 
 
 

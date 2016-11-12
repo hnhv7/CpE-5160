@@ -1,4 +1,4 @@
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    /*------------------------------------------------------------------*-
+/*------------------------------------------------------------------*-
 
    Main.H (v1.00)
 
@@ -38,19 +38,16 @@
 //  6 - Various Infineon and Philips devices, etc.
 //  4 - Dallas 320, 520 etc.
 //  1 - Dallas 420, etc.
-#define OSC_PER_INST (12)
+#define OSC_PER_INST (6)
 
 //------------------------------------------------------------------
 // SHOULD NOT NEED TO EDIT THE SECTIONS BELOW
 //------------------------------------------------------------------
 
-// Typedefs (see Chap 5) These types match with stdint.h  
+// Typedefs (see Chap 5)  
 typedef unsigned char uint8_t;
 typedef unsigned int  uint16_t;
 typedef unsigned long uint32_t;
-typedef char int8_t;
-typedef int  int16_t;
-typedef long int32_t;
 
 // Interrupts (see Chap 7)  
 #define Timer_0_Overflow 1
