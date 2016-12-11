@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "main.h"
 #include "Long_Serial_In.h"
-#include "UART.h"
 #include <stdlib.h>
 
 
@@ -25,18 +24,16 @@ uint32_t long_serial_input(void)
       index=0;
       do
       {
-         input=UART_Receive();
+         input=getchar();
          if((input>=0x30)&&(input<=0x39))
          {
            input_values[index]=input;
            index++;
-           putchar(input);
          }
          else if ((input==BS)||(input==DEL))  // Putty uses DEL (127) or BS (0x08) for backspace
          {
            index--;
            input_values[index]=0;
-           putchar(BS);
            putchar(space);
            putchar(BS);
          }
@@ -48,7 +45,9 @@ uint32_t long_serial_input(void)
          }
          else
          {
-            input=0;
+           putchar(BS);
+           putchar(space);
+           putchar(BS);
          }
          if(index==10)
          {

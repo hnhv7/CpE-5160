@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include "main.h"
 #include "print_bytes.h"
-#include "UART.h"
-
 
 
 
@@ -43,7 +41,7 @@ INPUT: Pointer to an array, number of bytes to print
 RETURNS: nothing
 CAUTION: 
 ************************************************************************/
-void print_memory(uint8_t * array_in, uint16_t number_of_bytes)
+void print_memory(uint16_t number_of_bytes, uint8_t * array_in)
 {
    uint8_t * input;
    uint16_t i;

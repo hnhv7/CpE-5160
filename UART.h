@@ -17,20 +17,10 @@
 #define BAUD_RATE (9600UL)
 #define BAUD_RATE_RELOAD ((uint8_t) (256-((1+(5*SPD))*(1+(1*SMOD1))*OSC_FREQ)/(32*OSC_PER_INST*BAUD_RATE)))
 
-#define UART_timeout (0xF1)
-
-// ASCII characters
-#define space (0x20)
-#define CR (0x0D)
-#define LF (0x0A)
-#define BS (0x08)
-#define DEL (0x7F)
 
 
 // ------ Public function prototypes -------------------------------
 void uart_init(void);
-uint8_t UART_Transmit(uint8_t send_value);
-uint8_t UART_Receive(void);
 
 
 
